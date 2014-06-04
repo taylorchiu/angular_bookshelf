@@ -2,11 +2,37 @@
 <html>
 <head>
   <script src="books.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
   <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
-  <link href="books.css" type="text/css" />
+  <link href="books.css" rel="stylesheet" type="text/css" />
   <title>Angular Bookshelf</title>
 </head>
-<body>
-  Hello World!
+<body ng-app>
+	<div ng-controller="BookCtrl">
+		<h1>Angular Bookshelf</h1>
+		<form name="AddBook" ng-submit="addBook()">
+			<input type="text" ng-model="newBook.title" placeholder="Title"></input><br>
+			<input type="text" ng-model="newBook.author" placeholder="Author"></input><br>
+			<input type="text" ng-model="newBook.isbn" placeholder="ISBN"></input><br>
+			<input type="text" ng-model="newBook.descrip" placeholder="Description"></input><br>
+			<button >Add Book</button>
+		</form>
+
+		<span class="books">
+			<div ng-repeat="book in books">
+				<ul class="book">
+					<li class="book-title"> {{book.title}} </li>
+					<li class="book-author"> {{book.author}} </li>
+					<li class="bookInfo"> 
+						{{book.isbn}} <br>
+						{{book.descrip}} <br>
+					</li>
+						<form ng-click="deleteBook(item)">
+							<button>Delete Book</button>
+						</form>
+				</ul>
+			</div>
+		</span>
+	</div>
 </body>
 </html>

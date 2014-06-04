@@ -7,6 +7,7 @@
   width: 200px;
   border: solid 1px black;
   word-break: break-all;
+  text-align: center;
 }
 .book-title {
   font-size: x-large;
@@ -17,5 +18,14 @@
 .book-author {
   font-size: medium;
   margin-bottom: 20px;
+}
+
+#bookInfo {
+  border: 2px solid black;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
 }
 
